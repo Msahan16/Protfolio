@@ -44,7 +44,13 @@
   height: 100%;
   top: -50%;
   left: -50%;
-  background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02) 2px, transparent 2px, transparent 15px);
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.02) 2px,
+    transparent 2px,
+    transparent 15px
+  );
   animation: windMove 25s linear infinite;
   z-index: 0;
 }
@@ -148,14 +154,14 @@
 .btn-primary {
   background: linear-gradient(135deg, #00ccff, #0066ff);
   color: var(--white);
-  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.4);
+  box-shadow: 0 8px 16px rgba(0, 102, 255, 0.35); /* reduced shadow */
 }
 
 .btn-secondary {
   background: transparent;
   color: #00ccff;
   border: 2px solid #00ccff;
-  box-shadow: 0 4px 15px rgba(0, 102, 255, 0.2);
+  box-shadow: 0 3px 10px rgba(0, 102, 255, 0.15); /* reduced shadow */
 }
 
 .btn-hover-effect {
@@ -294,6 +300,9 @@
     height: 350px;
     animation: floatDrop 4s ease-in-out infinite alternate;
   }
+  .hero-buttons {
+    justify-content: center; /* Center buttons */
+  }
 }
 
 @media (max-width: 640px) {
@@ -311,6 +320,11 @@
     height: 240px;
     margin-top: 25px;
   }
+  .hero-buttons {
+    flex-direction: column;   /* Stack vertically */
+    align-items: center;      /* Center align */
+    gap: 12px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -327,5 +341,10 @@
     width: 180px;
     height: 180px;
     margin-top: 30px;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
 }
