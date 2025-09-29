@@ -294,6 +294,7 @@
   }
   .hero-container {
     margin: 0 40px;
+    margin-bottom: -60px;
   }
   .image-wrapper {
     width: 350px;
