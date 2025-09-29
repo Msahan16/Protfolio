@@ -295,6 +295,8 @@
 
   .newsletter-form button {
     align-self: center;
+    font-size: 30px;
+    padding: 0px 90px;
   }
 }
 
