@@ -80,7 +80,7 @@ const Contact = () => {
             <input type="text" name="user_name" placeholder="Your Name" required />
             <input type="email" name="user_email" placeholder="Your Email" required />
             <textarea name="message" placeholder="Your Message" rows="3" required></textarea>
-            <button type="submit">→</button>
+            <button type="submit">Send</button>
           </form>
         </div>
       </div>
