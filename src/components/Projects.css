@@ -81,7 +81,6 @@
   transition: transform 0.6s ease, opacity 0.6s ease;
   border: 1px solid rgba(var(--primary-blue-rgb), 0.15);
   backdrop-filter: blur(10px);
-
   opacity: 0;
   transform: translateY(50px);
 }
@@ -152,6 +151,8 @@
   display: flex;
   gap: 10px;
   margin-top: 15px;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Always left-aligned */
 }
 
 .project-links a,
@@ -173,6 +174,7 @@
   letter-spacing: 0.5px;
 }
 
+/* Hover effect */
 .project-links a:hover,
 .project-links .live-demo-btn:hover {
   background: var(--primary-blue);
@@ -279,14 +281,21 @@
 .slider-container .prev { left: -40px; }
 .slider-container .next { right: -40px; }
 
-/* Responsive */
+/* ===================== Responsive ===================== */
+
+/* Tablets */
 @media (max-width: 1024px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
+  .projects {
+    padding: 20px 40px;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -296,6 +305,32 @@
     height: 200px;
   }
 
+  .project-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-info p {
+    font-size: 0.9rem;
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+
+  .project-links a,
+  .project-links .live-demo-btn {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+    min-width: 100px;
+    justify-content: flex-start; /* Keep left */
+  }
+
+  .load-more-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
   .live-demo-popup iframe {
     width: 95%;
     height: 70%;
@@ -303,4 +338,77 @@
 
   .slider-container .prev { left: 5px; }
   .slider-container .next { right: 5px; }
+
+  /* Category buttons center */
+  .project-categories {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .category-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 480px) {
+  .projects {
+    padding: 15px 20px;
+  }
+
+  .projects-grid {
+    gap: 15px;
+  }
+
+  .project-image img.project-img {
+    height: 150px;
+  }
+
+  .project-info h3 {
+    font-size: 1rem;
+  }
+
+  .project-info p {
+    font-size: 0.85rem;
+  }
+
+  .tech-tag {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
+
+  .project-links a,
+  .project-links .live-demo-btn {
+    font-size: 0.8rem;
+    padding: 5px 8px;
+    min-width: 90px;
+    justify-content: flex-start; /* Always left */
+  }
+
+  .load-more-btn {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+
+  .slider-container {
+    width: 100%;
+  }
+
+  .slider-container .prev,
+  .slider-container .next {
+    font-size: 1.5rem;
+    padding: 8px 10px;
+  }
+
+  /* Category buttons center */
+  .project-categories {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .category-btn {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
 }
