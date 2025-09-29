@@ -108,7 +108,7 @@ const Contact = () => {
           <h4>Follow me</h4>
           <div className="social-links">
             <a
-              href="https://www.linkedin.com/in/mohamed-saman-linked/"
+              href="https://www.linkedin.com/in/mohamed-saman/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -122,7 +122,7 @@ const Contact = () => {
               <FaGithub /> GitHub
             </a>
             <a
-              href="https://instagram.com/mohamedsaman"
+              href="https://www.linkedin.com/in/mohamed-saman/"
               target="_blank"
               rel="noopener noreferrer"
             >
