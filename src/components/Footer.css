@@ -1,0 +1,32 @@
+.footer {
+  background: linear-gradient(135deg, #0a0a1a, #001a40); /* match contact section */
+  text-align: center;
+  padding: 25px 10px;
+  color: #cfe4ff; /* lighter blue text to match contact section */
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(0, 102, 255, 0.4); /* primary blue border */
+  backdrop-filter: blur(6px);
+  box-shadow: 0 -2px 12px rgba(0, 102, 255, 0.25); /* blue glow */
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer p {
+  margin: 0;
+  color: #cfe4ff; /* light blue */
+  text-shadow: 0 0 6px rgba(0, 102, 255, 0.35);
+}
+
+.footer a {
+  color: #5abfff; /* brighter blue link */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 6px rgba(0, 102, 255, 0.35);
+}
+
+.footer a:hover {
+  color: #ffffff;
+  text-shadow: 
+    0 0 8px rgba(0, 102, 255, 0.6),
+    0 0 14px rgba(0, 102, 255, 0.4);
+}

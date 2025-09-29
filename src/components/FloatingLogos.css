@@ -1,0 +1,38 @@
+/* Floating logos over Hero section */
+.floating-logo {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.7;
+  width: 60px; /* adjust as needed */
+  animation: floatAll 10s linear infinite;
+  transform-origin: center;
+}
+
+/* Full area floating animation */
+@keyframes floatAll {
+  0%   { transform: translate(0px, 0px) rotate(0deg); }
+  20%  { transform: translate(50px, -30px) rotate(45deg); }
+  40%  { transform: translate(-40px, 60px) rotate(90deg); }
+  60%  { transform: translate(80px, -50px) rotate(135deg); }
+  80%  { transform: translate(-60px, 40px) rotate(270deg); }
+  100% { transform: translate(0px, 0px) rotate(360deg); }
+}
+
+/* Optional: fade in/out slightly for natural effect */
+.floating-logo::before {
+  content: '';
+  opacity: 0;
+  animation: fadeLogo 10s ease-in-out infinite;
+}
+
+@keyframes fadeLogo {
+  0%, 100% { opacity: 0.6; }
+  50%      { opacity: 1; }
+}
+
+/* Optional: responsive for mobile */
+@media (max-width: 640px) {
+  .floating-logo {
+    width: 30px !important;
+  }
+}

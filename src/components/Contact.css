@@ -1,0 +1,330 @@
+:root {
+  --primary-blue: #0066ff;
+  --dark-blue: #0044cc;
+  --white: #ffffff;
+  --light-blue: #cfe4ff;
+  --gray: #999999;
+}
+
+/* ========================= Section Wrapper ========================= */
+.contact-section {
+  background: linear-gradient(to bottom, #0a0a1a, #001a40);
+  color: var(--white);
+  padding: 30px 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 50px;
+  border-top: 0px solid rgba(255,255,255,0.08);
+}
+
+.contact-left {
+  flex: 1.1;
+  min-width: 350px;
+  position: relative;
+}
+
+.contact-left canvas {
+  display: block;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.contact-subtitle {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: var(--light-blue);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.contact-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+.contact-title span {
+  color: var(--primary-blue);
+  text-shadow: 0 0 10px rgba(0, 102, 255, 0.4);
+}
+
+.contact-text {
+  font-size: 1.1rem;
+  color: var(--light-blue);
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+/* Contact Illustration Full Left Cover */
+.contact-image {
+  position: absolute;
+  bottom: 20px;
+  left: 80px;
+  width: 100%;
+  height: auto;
+  max-width: 550px;
+  opacity: 0.9;
+  z-index: 0;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.contact-left {
+  position: relative;
+  z-index: 1;
+}
+
+/* Right Side */
+.contact-right {
+  flex: 1;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.connect-box, 
+.social-box, 
+.newsletter-box {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.connect-box:hover, 
+.social-box:hover, 
+.newsletter-box:hover {
+  transform: translateY(-4px);
+}
+
+.connect-box h4,
+.social-box h4,
+.newsletter-box h4 {
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  color: var(--primary-blue);
+}
+
+/* Contact Info (email + phone) */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-info a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1rem;
+  padding: 10px 16px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.05);
+  transition: all 0.3s ease;
+}
+
+.contact-info a:hover {
+  background: var(--primary-blue);
+  color: var(--white);
+  box-shadow: 0 0 10px rgba(0,102,255,0.5);
+}
+
+.contact-info svg {
+  font-size: 1.2rem;
+  color: var(--primary-blue);
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover svg {
+  color: var(--white);
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 160px;
+  height: 40px;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.social-links a:hover {
+  color: var(--white);
+  background: var(--primary-blue);
+  box-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Form */
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.newsletter-form input,
+.newsletter-form textarea {
+  padding: 14px 16px;
+  border: none;
+  border-bottom: 2px solid var(--gray);
+  background: transparent;
+  color: var(--white);
+  font-size: 1.05rem;
+  resize: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.newsletter-form input:focus,
+.newsletter-form textarea:focus {
+  outline: none;
+  border-bottom-color: var(--primary-blue);
+  box-shadow: 0 2px 8px rgba(0,102,255,0.4);
+}
+
+.newsletter-form button {
+  align-self: flex-end;
+  background: var(--primary-blue);
+  border: none;
+  color: var(--white);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: var(--dark-blue);
+  box-shadow: 0 0 12px rgba(0,102,255,0.6);
+}
+
+/* ========================= Mobile Responsive ========================= */
+@media (max-width: 1024px) {
+  .contact-section {
+    padding: 20px 40px;
+    gap: 30px;
+  }
+
+  .contact-left,
+  .contact-right {
+    min-width: 300px;
+  }
+
+  .contact-title {
+    font-size: 2.4rem;
+  }
+
+  .contact-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .contact-text {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .contact-image {
+    max-width: 400px;
+    left: 20px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    padding: 20px 30px;
+    gap: 25px;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .contact-subtitle {
+    text-align: center;
+  }
+
+  .contact-text {
+    text-align: center;
+  }
+
+  .contact-image {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    margin-top: 20px;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .newsletter-form button {
+    align-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 20px 15px;
+    gap: 20px;
+  }
+
+  .contact-title {
+    font-size: 1.8rem;
+  }
+
+  .contact-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .contact-text {
+    font-size: 0.95rem;
+  }
+
+  .newsletter-form input,
+  .newsletter-form textarea {
+    font-size: 0.95rem;
+    padding: 12px 14px;
+  }
+
+  .social-links a {
+    width: 100px;
+    font-size: 0.85rem;
+    height: 28px;
+  }
+}
