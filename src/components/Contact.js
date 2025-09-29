@@ -49,11 +49,12 @@ const Contact = () => {
         <div className="contact-left-inner">
           {/* Left Text */}
           <div className="contact-left-text">
-            <p className="contact-subtitle">HELLO! I'M LISTENING</p>
+            <p className="contact-subtitle">LET'S CREATE TOGETHER</p>
             <h2 className="contact-title">
-              Why Choose <span>ME!</span>
+             Why Work <span className="highlight-text">With Me?</span>
             </h2>
-            <p className="contact-text">Sound good? Let's connect! →</p>
+            <p className="contact-text"> I turn ideas into reality. Let’s discuss your project and make it extraordinary !
+            </p>
 
             {/* Trust Features */}
             <div className="trust-features">
