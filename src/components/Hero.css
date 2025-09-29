@@ -6,8 +6,8 @@
   --gray: #cccccc;
   --transition-fast: 0.3s ease;
   --transition-slow: 0.5s ease;
-  --gradient: linear-gradient(135deg, #00ccff, #0066ff); /* Added gradient variable */
-  --shadow: 0 8px 20px rgba(0, 102, 255, 0.4); /* Added shadow variable */
+  --gradient: linear-gradient(135deg, #00ccff, #0066ff);
+  --shadow: 0 8px 20px rgba(0, 102, 255, 0.4);
 }
 
 /* Reset */
@@ -154,14 +154,14 @@
 .btn-primary {
   background: linear-gradient(135deg, #00ccff, #0066ff);
   color: var(--white);
-  box-shadow: 0 8px 16px rgba(0, 102, 255, 0.35); /* reduced shadow */
+  box-shadow: 0 8px 16px rgba(0, 102, 255, 0.35);
 }
 
 .btn-secondary {
   background: transparent;
   color: #00ccff;
   border: 2px solid #00ccff;
-  box-shadow: 0 3px 10px rgba(0, 102, 255, 0.15); /* reduced shadow */
+  box-shadow: 0 3px 10px rgba(0, 102, 255, 0.15);
 }
 
 .btn-hover-effect {
@@ -301,11 +301,14 @@
     animation: floatDrop 4s ease-in-out infinite alternate;
   }
   .hero-buttons {
-    justify-content: center; /* Center buttons */
+    justify-content: center;
   }
 }
 
 @media (max-width: 640px) {
+  .text-content {
+    margin-top: 50px; /* Push text lower on small screens */
+  }
   .hero-title {
     font-size: 2.7rem;
   }
@@ -321,13 +324,16 @@
     margin-top: 25px;
   }
   .hero-buttons {
-    flex-direction: column;   /* Stack vertically */
-    align-items: center;      /* Center align */
+    flex-direction: column;
+    align-items: center;
     gap: 12px;
   }
 }
 
 @media (max-width: 480px) {
+  .text-content {
+    margin-top: 65px; /* Push text even lower on very small screens */
+  }
   .hero-title {
     font-size: 2.2rem;
   }
