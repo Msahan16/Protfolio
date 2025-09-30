@@ -156,7 +156,6 @@ const Contact = () => {
               <option value="I have an idea for a mobile app." />
               <option value="I want a custom software solution." />
               <option value="I need help with UI/UX design." />
-              <option value="Other (I will type my own message)" />
             </datalist>
 
             <button type="submit">Send</button>
