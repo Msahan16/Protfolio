@@ -4,10 +4,12 @@
   background-size: 200% 200%;
   animation: gradientShift 20s ease infinite;
   color: var(--text-light);
-  padding: 60px 80px;
+  padding: clamp(30px, 5vw, 60px) clamp(15px, 3vw, 80px);
   position: relative;
   overflow: hidden;
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 @keyframes gradientShift {
@@ -18,22 +20,23 @@
 
 /* Section Title */
 .about .section-title {
-  font-size: 2.2rem;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
   color: var(--primary-blue);
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 40px;
+  margin-bottom: clamp(25px, 4vw, 40px);
   text-align: center;
   letter-spacing: 1px;
   text-shadow: 0 0 8px rgba(var(--primary-blue-rgb), 0.4),
                0 0 15px rgba(var(--primary-blue-rgb), 0.25);
   position: relative;
+  width: 100%;
 }
 
 .about .section-title::after {
   content: '';
   display: block;
-  width: 90px;
+  width: clamp(60px, 12vw, 90px);
   height: 4px;
   background: var(--primary-blue);
   margin: 15px auto 0;
@@ -44,9 +47,11 @@
 .about-text {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  gap: clamp(15px, 3vw, 30px);
   align-items: stretch;
-  padding: 0 5%;
+  padding: 0 clamp(0%, 5%, 5%);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* About Card */
@@ -54,8 +59,8 @@
   position: relative;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 15px;
-  padding: 25px 30px;
-  font-size: 1rem;
+  padding: clamp(15px, 3vw, 25px) clamp(18px, 3vw, 30px);
+  font-size: clamp(0.85rem, 2vw, 1rem);
   line-height: 1.8;
   color: #cbd5e1;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
@@ -64,6 +69,11 @@
   opacity: 0;
   transform: translateY(40px);
   cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
 }
 
 .about-text p.visible {
@@ -102,27 +112,29 @@
 
 /* ========================= Skills Section ========================= */
 .skills {
-  padding: 60px 80px;
-  
+  padding: clamp(30px, 5vw, 60px) clamp(15px, 3vw, 80px);
   color: var(--text-light);
   text-align: center;
   position: relative;
   overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .skills h3 {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   color: var(--primary-blue);
-  margin-bottom: 35px;
+  margin-bottom: clamp(25px, 4vw, 35px);
   text-transform: uppercase;
   font-weight: 700;
   text-shadow: 0 0 6px rgba(var(--primary-blue-rgb),0.4);
+  width: 100%;
 }
 
 .skills h3::after {
   content: '';
   display: block;
-  width: 60px;
+  width: clamp(50px, 10vw, 60px);
   height: 3px;
   background: var(--primary-blue);
   margin: 12px auto 0;
@@ -133,24 +145,26 @@
 .skills-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  gap: clamp(15px, 3vw, 25px);
   justify-items: center;
   align-items: stretch;
+  width: 100%;
 }
 
 /* Skill Category Box */
 .skill-category {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 15px;
-  padding: 25px;
+  padding: clamp(18px, 3vw, 25px);
   width: 100%;
-  max-width: 400px;
+  max-width: min(400px, 90vw);
   text-align: left;
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
   transform: translateY(40px);
   opacity: 0;
   transition: all 0.4s ease;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .skill-category.visible {
@@ -169,29 +183,33 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
   margin-bottom: 12px;
   color: #facc15;
   border-bottom: 2px solid rgba(var(--primary-blue-rgb),0.3);
   padding-bottom: 5px;
+  flex-wrap: wrap;
 }
 
 .skill-logo {
-  width: 28px;
-  height: 28px;
+  width: clamp(24px, 5vw, 28px);
+  height: clamp(24px, 5vw, 28px);
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .skill-category ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 
 .skill-category li {
   margin: 12px 0;
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
   color: #e2e8f0;
+  width: 100%;
 }
 
 /* Skill line: name + percentage */
@@ -200,12 +218,16 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 6px;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
 .progress-percent {
   color: #facc15;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  flex-shrink: 0;
 }
 
 .progress-bar {
@@ -214,6 +236,7 @@
   background: rgba(255,255,255,0.2);
   border-radius: 8px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .progress {
@@ -229,7 +252,8 @@
   width: 100%;
   overflow: hidden;
   background: #0f172a;
-  padding: 25px 0;
+  padding: clamp(15px, 3vw, 25px) 0;
+  box-sizing: border-box;
 }
 
 .logos-track {
@@ -239,9 +263,10 @@
 }
 
 .logos-track img {
-  height: 65px;
-  margin: 0 35px;
+  height: clamp(30px, 8vw, 65px);
+  margin: 0 clamp(8px, 3vw, 35px);
   transition: transform 0.4s;
+  flex-shrink: 0;
 }
 
 .logos-track img:hover {
@@ -257,87 +282,184 @@
 
 /* Tablets */
 @media (max-width: 1024px) {
-  .about {
-    padding: 50px 40px;
-  }
   .about-text {
     grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 0 8%;
+    gap: clamp(12px, 2vw, 20px);
+    padding: 0 clamp(5%, 8%, 8%);
   }
-  .skills {
-    padding: 50px 40px;
-  }
+  
   .skills-row {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: clamp(12px, 2vw, 20px);
   }
+  
   .logos-track img {
-    height: 50px;
-    margin: 0 20px;
+    height: clamp(30px, 6vw, 50px);
+    margin: 0 clamp(10px, 2vw, 20px);
   }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
-  .about {
-    padding: 40px 25px;
-  }
-  .about .section-title {
-    font-size: 1.8rem;
-  }
   .about-text {
-    padding: 0 5%;
-    gap: 15px;
+    padding: 0 clamp(2%, 5%, 5%);
+    gap: clamp(10px, 2vw, 15px);
   }
-  .about-text p {
-    font-size: 0.9rem;
-    padding: 18px;
-  }
-  .skills {
-    padding: 40px 25px;
-  }
+  
   .skills-row {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: clamp(10px, 2vw, 15px);
   }
+  
   .skill-category {
-    padding: 18px;
+    padding: clamp(15px, 2.5vw, 18px);
   }
-  .skill-category h4 {
-    font-size: 1.1rem;
-  }
+  
   .logos-track img {
-    height: 40px;
-    margin: 0 12px;
+    height: clamp(25px, 5vw, 40px);
+    margin: 0 clamp(6px, 1.5vw, 12px);
   }
 }
 
 /* Extra Small Mobile */
 @media (max-width: 480px) {
-  .about {
-    padding: 30px 15px;
-  }
-  .about .section-title {
-    font-size: 1.5rem;
-    margin-bottom: 25px;
-  }
   .about-text {
     padding: 0;
-    gap: 12px;
+    gap: clamp(8px, 2vw, 12px);
   }
+  
   .about-text p {
-    font-size: 0.85rem;
-    padding: 15px;
+    padding: clamp(12px, 2.5vw, 15px);
+    min-height: 100px;
   }
-  .skills {
-    padding: 30px 15px;
-  }
-  .skills h3 {
-    font-size: 1.5rem;
-  }
+  
   .logos-track img {
-    height: 30px;
-    margin: 0 8px;
+    height: clamp(20px, 4vw, 30px);
+    margin: 0 clamp(4px, 1vw, 8px);
+  }
+  
+  .skill-line {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+  
+  .progress-bar {
+    width: 100%;
+  }
+}
+
+/* Large Desktop Screens */
+@media (min-width: 1440px) {
+  .about-text {
+    padding: 0 8%;
+  }
+  
+  .skills-row {
+    gap: 30px;
+  }
+  
+  .skill-category {
+    max-width: 450px;
+  }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1920px) {
+  .about-text {
+    padding: 0 12%;
+  }
+  
+  .skills-row {
+    gap: 35px;
+  }
+  
+  .skill-category {
+    max-width: 500px;
+    padding: 30px;
+  }
+}
+
+/* Portrait mode for tablets */
+@media (max-width: 1024px) and (orientation: portrait) {
+  .about-text p {
+    min-height: 100px;
+  }
+  
+  .skills-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Landscape mode for mobile */
+@media (max-width: 896px) and (orientation: landscape) {
+  .about-text {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .skills-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .about-text p {
+    min-height: 140px;
+  }
+}
+
+/* Very small height devices */
+@media (max-height: 600px) {
+  .about {
+    padding: 20px 15px;
+  }
+  
+  .skills {
+    padding: 20px 15px;
+  }
+  
+  .about-text p {
+    min-height: 80px;
+    padding: 12px 15px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .about-text p:hover {
+    transform: none;
+  }
+  
+  .skill-category:hover {
+    transform: none;
+  }
+  
+  .logos-track img:hover {
+    transform: none;
+  }
+}
+
+/* High DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .about-text p,
+  .skill-category {
+    border-width: 2px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .about {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .about-text p,
+  .skill-category {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+  
+  .logos-marquee {
+    display: none;
   }
 }
