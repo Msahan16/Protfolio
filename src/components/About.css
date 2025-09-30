@@ -60,6 +60,7 @@
   position: relative;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 15px;
+
   padding: clamp(15px, 3vw, 25px) clamp(18px, 3vw, 30px);
   font-size: clamp(0.85rem, 2vw, 1rem);
   line-height: 1.8;
@@ -83,7 +84,7 @@
 }
 
 .about-text p:hover {
-  transform: translateY(-8px) scale(1.02);
+  
   box-shadow: 0 15px 30px rgba(var(--primary-blue-rgb), 0.4);
 }
 /* Ensure paragraph is a positioned container */
