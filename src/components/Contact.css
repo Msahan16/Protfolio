@@ -15,7 +15,7 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch; /* <-- stretch left & right to same height */
 }
 
 /* ===== Left Section ===== */
@@ -26,9 +26,9 @@
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-height: 630px;
   align-items: center;
   justify-content: center;
+  min-height: 630px;
 }
 
 .contact-left:hover {
@@ -77,6 +77,7 @@
   color: var(--white);
 }
 
+/* ===== Trust Features ===== */
 .trust-features {
   margin-top: 20px;
   display: flex;
@@ -84,10 +85,15 @@
   gap: 12px;
 }
 
+.feature-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .feature {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
   padding: 10px;
   background: rgba(255, 255, 255, 0.08);
   border-left: 4px solid var(--primary-blue);
@@ -95,6 +101,7 @@
   font-size: 1rem;
   font-weight: 600;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .feature:hover {
@@ -113,6 +120,62 @@
   color: var(--white);
 }
 
+/* Arrow icon for dropdown */
+.arrow-icon {
+  font-size: 1rem;
+  color: var(--primary-blue);
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon.active {
+  transform: rotate(180deg);
+}
+
+.feature:hover .arrow-icon {
+  color: var(--white);
+}
+
+/* Dropdown details */
+.feature-detail {
+  margin-left: 36px;
+  margin-top: 5px;
+  padding: 10px 15px;
+  background: linear-gradient(135deg, #d0a403 0%, #f09749 50%, #f4a82e 100%);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 650;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  background-size: 200% 200%;
+  animation: shimmer 3s linear infinite, slideDown 0.3s ease;
+}
+
+/* Slide down animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ===== Left Image ===== */
 .contact-left-image {
   flex: 1 1 280px;
   display: flex;
@@ -140,9 +203,10 @@
   margin: 0;
   margin-right: -20px;
   min-width: 300px;
-  right: 0;
+  justify-content: stretch; /* stretch right boxes vertically */
 }
 
+/* Make all right boxes equal height */
 .connect-box,
 .social-box,
 .newsletter-box {
@@ -151,6 +215,9 @@
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
+  flex: 1 1 0; /* equal height */
+  display: flex;
+  flex-direction: column;
 }
 
 .connect-box:hover,
@@ -259,7 +326,7 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  align-self: center; /* Center button */
+  align-self: center;
   transition: all 0.3s ease;
 }
 
@@ -267,7 +334,6 @@
   background: var(--dark-blue);
   box-shadow: 0 0 12px rgba(0, 102, 255, 0.6);
 }
-
 
 /* ===== Responsive ===== */
 @media (max-width: 1200px) {
@@ -316,6 +382,7 @@
     flex: 1 1 100%;
     width: 100%;
     margin-right: 0;
+    flex-direction: column;
   }
 }
 
