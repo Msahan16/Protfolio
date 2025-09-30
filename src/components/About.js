@@ -169,9 +169,10 @@ const About = () => {
               <h4><img className="skill-logo" src={fileLogo} alt="Programming" />Programming</h4>
               {renderSkills([
                 { name: "Python", width: "90%" },
-                { name: "PHP", width: "95%" },
+                { name: "PHP", width: "100%" },
                 { name: "C#", width: "75%" },
-                { name: "Java", width: "80%" }
+                { name: "Java", width: "80%" },
+                { name: "HTML5", width: "100%" }
               ])}
             </div>
 
@@ -181,7 +182,9 @@ const About = () => {
               {renderSkills([
                 { name: "React.js", width: "85%" },
                 { name: "Bootstrap 5", width: "90%" },
-                { name: "Tailwind", width: "70%" }
+                { name: "Tailwind", width: "95%" },
+                { name: "Next.js", width: "80%" },
+                { name: "JavaScript", width: "90%" }
               ])}
             </div>
 
@@ -232,7 +235,8 @@ const About = () => {
                 { name: "PostgreSQL", width: "80%" },
                 { name: "MongoDB", width: "75%" },
                 { name: "SQLite", width: "95%" },
-                { name: "Firebase", width: "70%" }
+                { name: "Firebase", width: "70%" },
+                { name: "Oracle", width: "85%" }
               ])}
             </div>
 
