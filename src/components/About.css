@@ -5,6 +5,7 @@
   animation: gradientShift 20s ease infinite;
   color: var(--text-light);
   padding: clamp(30px, 5vw, 60px) clamp(15px, 3vw, 80px);
+  padding-top: 0px;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -85,25 +86,36 @@
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 15px 30px rgba(var(--primary-blue-rgb), 0.4);
 }
+/* Ensure paragraph is a positioned container */
+.about-text p {
+  position: relative;
+  display: inline-block; /* keeps shine tight to text */
+  overflow: hidden;
+}
 
 /* Shine line effect */
 .about-text p::before {
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
+  left: -100%; /* start off-screen */
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, transparent, rgba(var(--primary-blue-rgb), 0.8), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--primary-blue-rgb), 0.8),
+    transparent
+  );
   border-radius: 2px;
-  transition: 0.5s ease;
 }
 
+/* Animate on hover */
 .about-text p:hover::before {
-  left: 0;
   animation: shine 1.2s ease-in-out infinite;
 }
 
+/* Keyframes for moving shine line */
 @keyframes shine {
   0% { left: -100%; }
   50% { left: 100%; }
@@ -251,7 +263,6 @@
 .logos-marquee {
   width: 100%;
   overflow: hidden;
-  background: #0f172a;
   padding: clamp(15px, 3vw, 25px) 0;
   box-sizing: border-box;
 }
