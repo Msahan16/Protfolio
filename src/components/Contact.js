@@ -143,13 +143,14 @@ const Contact = () => {
             <input type="text" name="user_name" placeholder="Your Name" required />
             <input type="email" name="user_email" placeholder="Your Email" required />
 
-            {/* Message field with dropdown suggestions */}
+            {/* Message field without arrow mark */}
             <input
               type="text"
               name="message"
               placeholder="Your Message"
               list="predefined-messages"
               required
+              className="no-arrow"
             />
             <datalist id="predefined-messages">
               <option value="I want to build a website." />
