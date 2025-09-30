@@ -142,7 +142,23 @@ const Contact = () => {
           <form ref={form} onSubmit={sendEmail} className="newsletter-form">
             <input type="text" name="user_name" placeholder="Your Name" required />
             <input type="email" name="user_email" placeholder="Your Email" required />
-            <textarea name="message" placeholder="Your Message" rows="3" required />
+
+            {/* Message field with dropdown suggestions */}
+            <input
+              type="text"
+              name="message"
+              placeholder="Your Message"
+              list="predefined-messages"
+              required
+            />
+            <datalist id="predefined-messages">
+              <option value="I want to build a website." />
+              <option value="I have an idea for a mobile app." />
+              <option value="I want a custom software solution." />
+              <option value="I need help with UI/UX design." />
+              <option value="Other (I will type my own message)" />
+            </datalist>
+
             <button type="submit">Send</button>
           </form>
         </div>

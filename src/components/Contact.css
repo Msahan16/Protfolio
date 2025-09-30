@@ -15,7 +15,7 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  align-items: stretch; /* <-- stretch left & right to same height */
+  align-items: stretch;
 }
 
 /* ===== Left Section ===== */
@@ -203,7 +203,7 @@
   margin: 0;
   margin-right: -20px;
   min-width: 300px;
-  justify-content: stretch; /* stretch right boxes vertically */
+  justify-content: stretch;
 }
 
 /* Make all right boxes equal height */
@@ -215,7 +215,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
-  flex: 1 1 0; /* equal height */
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
 }
@@ -295,28 +295,89 @@
   transform: translateY(-2px);
 }
 
+/* ===== Newsletter Form ===== */
 .newsletter-form {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
+/* Input & textarea with dropdown/suggestions style */
 .newsletter-form input,
 .newsletter-form textarea {
-  padding: 10px;
+  padding: 12px 15px;
   border: none;
+  border-radius: 8px;
   border-bottom: 2px solid var(--gray);
-  background: transparent;
+  background: rgba(255, 255, 255, 0.08);
   color: var(--white);
   font-size: 1rem;
+  width: 100%;
+  transition: all 0.3s ease;
+  resize: vertical;
+}
+
+/* Suggestion dropdown design */
+.newsletter-form textarea {
+  position: relative;
+  min-height: 80px;
+}
+
+.newsletter-form textarea::placeholder {
+  color: var(--gray);
+  opacity: 0.8;
 }
 
 .newsletter-form input:focus,
 .newsletter-form textarea:focus {
   outline: none;
   border-bottom-color: var(--primary-blue);
+  background: rgba(0, 102, 255, 0.1);
+  box-shadow: 0 0 10px rgba(0, 102, 255, 0.3);
+}
+.suggestion-box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: rgba(10, 10, 30, 0.95); /* Dark modern background */
+  border-radius: 12px;
+  margin-top: 6px;
+  z-index: 999;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6); /* subtle depth */
+  display: none; /* show when active */
+  overflow: hidden;
+  backdrop-filter: blur(10px); /* modern glass effect */
+  border: 1px solid rgba(0, 102, 255, 0.3); /* soft border accent */
+  animation: slideDown 0.25s ease;
 }
 
+.suggestion-box.active {
+  display: block;
+}
+
+.suggestion-box div {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 50, 0.5);
+}
+
+.suggestion-box div:hover {
+  background: linear-gradient(90deg, #0066ff, #00ccff);
+  color: #ffffff;
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px rgba(0, 102, 255, 0.5);
+  border-radius: 8px;
+}
+
+/* Submit button */
 .newsletter-form button {
   padding: 10px 60px;
   background: var(--primary-blue);
