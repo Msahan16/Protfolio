@@ -18,7 +18,7 @@ const About = () => {
     );
     skillBoxes.forEach(box => observer.observe(box));
 
-    const paragraphs = document.querySelectorAll('.about-text p');
+    const paragraphs = document.querySelectorAll('.about-text p, .education-item');
     const paraObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -54,69 +54,76 @@ const About = () => {
   return (
     <>
       {/* Logos Marquee Above Education */}
-     
-
-      {/* Education Section */}
-    
-
-      {/* About Me Section */}
       <section id="about" className="about">
-        {/* Logos Marquee Above Education */}
-         <div className="logos-marquee about-logos-top">
-        <div className="logos-track">
-          {[
-            "java", "python", "php", "react", "laravel", "mysql", "javascript", "csharp", "wordpress", "html5"
-          ].map((tech, index) => (
-            <img
-              key={index}
-              src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`}
-              alt={tech}
-            />
-          ))}
-          <img src={awsLogo} alt="AWS" />
-          {/* Duplicate logos for seamless scrolling */}
-          {[
-            "java", "python", "php", "react", "laravel", "mysql", "javascript", "csharp", "wordpress", "html5"
-          ].map((tech, index) => (
-            <img
-              key={`dup-${index}`}
-              src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`}
-              alt={tech}
-            />
-          ))}
-          <img src={awsLogo} alt="AWS" />
+        <div className="logos-marquee about-logos-top">
+          <div className="logos-track">
+            {[
+              "java", "python", "php", "react", "laravel", "mysql", "javascript", "csharp", "wordpress", "html5"
+            ].map((tech, index) => (
+              <img
+                key={index}
+                src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`}
+                alt={tech}
+              />
+            ))}
+            <img src={awsLogo} alt="AWS" />
+            {[
+              "java", "python", "php", "react", "laravel", "mysql", "javascript", "csharp", "wordpress", "html5"
+            ].map((tech, index) => (
+              <img
+                key={`dup-${index}`}
+                src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`}
+                alt={tech}
+              />
+            ))}
+            <img src={awsLogo} alt="AWS" />
+          </div>
         </div>
-      </div>
-       
-         <h2 className="section-title">Education</h2>
+
+        {/* Education Section */}
+        <h2 className="section-title">Education</h2>
         <div className="about-text">
-          <p>
-            <img src={southEasternLogo} alt="SEUSL" className="inline-logo" />
-            I hold a BSc in MIT from South Eastern University of Sri Lanka, where I developed a strong foundation in information technology and software development.
-          </p>
-          <p>
-            <img src={londonMetLogo} alt="London Met" className="inline-logo" />
-            I also earned a BSc in Software Engineering from London Metropolitan University, which strengthened my skills in software design, programming, and engineering best practices.
-          </p>
+          <div className="education-item">
+            <h4>
+              <img src={southEasternLogo} alt="SEUSL" className="inline-logo" />
+              Bachelor of Science in Management Information Technology
+            </h4>
+            <ul>
+              <li><strong>Institution:</strong> South Eastern University of Sri Lanka</li>
+              <li><strong>Class:</strong> Second Upper Division</li>
+              <li>Built a strong foundation in information technology and software development principles through project-based learning and hands-on experience.</li>
+            </ul>
+          </div>
+
+          <div className="education-item">
+            <h4>
+              <img src={londonMetLogo} alt="London Met" className="inline-logo" />
+              Bachelor of Science in Software Engineering
+            </h4>
+            <ul>
+              <li><strong>Institution:</strong> London Metropolitan University</li>
+              <li><strong>Focus:</strong> Software design, engineering best practices, and full-stack development methodologies.</li>
+              <li>Enhanced capabilities in building scalable, maintainable software with emphasis on quality and performance.</li>
+            </ul>
+          </div>
         </div>
-        
+
+        {/* About Me Section */}
         <h2 className="section-title">About Me</h2>
-        
         <div className="about-content">
           <div className="about-text">
-            <p>I am a passionate full-stack developer with extensive hands-on experience delivering high-quality web and mobile applications across multiple industries.</p>
-            <p>My expertise spans modern frameworks such as Laravel, Django, Yii2, and .NET, paired with frontend technologies like React.js, Bootstrap 5, and Tailwind CSS.</p>
-            <p>I have strong programming skills in Python, PHP, C#, and Java, enabling the implementation of complex business logic and automation.</p>
-            <p>Experienced in DevOps and cloud deployment using AWS, EC2, VPS hosting, cPanel, and hPanel, ensuring reliable and scalable applications.</p>
-            <p>I have worked on projects ranging from WordPress, Shopify, and Joomla websites to enterprise internal tools and online booking systems.</p>
-            <p>I hold certifications in WordPress, cybersecurity, and ticketing systems.</p>
+            <p>I am a passionate full-stack developer delivering high-quality web and mobile applications across industries.</p>
+            <p>Proficient in frameworks such as Laravel, Django, Yii2, and .NET, with frontend expertise in React.js, Bootstrap 5, and Tailwind CSS.</p>
+            <p>Strong programming skills in Python, PHP, C#, and Java enable the implementation of complex business logic and automation.</p>
+            <p>Experienced in DevOps and cloud deployment using AWS, EC2, VPS hosting, cPanel, and hPanel to ensure scalable and reliable applications.</p>
+            <p>Worked on projects ranging from WordPress, Shopify, and Joomla websites to enterprise internal tools and online booking systems.</p>
+            <p>Holder of certifications in WordPress, cybersecurity, and ticketing systems.</p>
           </div>
 
           {/* Skills */}
           <div className="skills">
             <h3>Skills</h3>
             <div className="skills-row">
-              {/* Programming */}
               <div className="skill-category">
                 <h4><img className="skill-logo" src={fileLogo} alt="Programming" />Programming</h4>
                 {renderSkills([
@@ -128,7 +135,6 @@ const About = () => {
                 ])}
               </div>
 
-              {/* Frontend */}
               <div className="skill-category">
                 <h4><img className="skill-logo" src={fileLogo} alt="Frontend" />Frontend</h4>
                 {renderSkills([
@@ -140,7 +146,6 @@ const About = () => {
                 ])}
               </div>
 
-              {/* Frameworks */}
               <div className="skill-category">
                 <h4><img className="skill-logo" src={fileLogo} alt="Frameworks" />Frameworks</h4>
                 {renderSkills([
@@ -152,7 +157,6 @@ const About = () => {
                 ])}
               </div>
 
-              {/* DevOps */}
               <div className="skill-category">
                 <h4><img className="skill-logo" src={fileLogo} alt="DevOps" />DevOps</h4>
                 {renderSkills([
@@ -165,7 +169,6 @@ const About = () => {
                 ])}
               </div>
 
-              {/* Web Development */}
               <div className="skill-category">
                 <h4><img className="skill-logo" src={fileLogo} alt="Web Development" />Web Development</h4>
                 {renderSkills([
@@ -178,7 +181,6 @@ const About = () => {
                 ])}
               </div>
 
-              {/* Database */}
               <div className="skill-category">
                 <h4><img className="skill-logo" src={fileLogo} alt="Database" />Database</h4>
                 {renderSkills([
