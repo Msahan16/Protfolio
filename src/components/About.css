@@ -54,12 +54,14 @@
   border-radius: 2px;
 }
 
+/* ========================= Updated About Text ========================= */
 .about-text {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: clamp(15px, 3vw, 30px);
+  grid-template-columns: repeat(2, minmax(450px, 1fr));
+  gap: clamp(25px, 3vw, 40px);
+  justify-content: center;
   align-items: stretch;
-  padding: 0 clamp(0%, 5%, 5%);
+  padding: 0 clamp(5%, 8%, 12%);
   width: 100%;
   box-sizing: border-box;
 }
@@ -68,9 +70,9 @@
   position: relative;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 15px;
-  padding: clamp(15px, 3vw, 25px) clamp(18px, 3vw, 30px);
-  font-size: clamp(0.85rem, 2vw, 1rem);
-  line-height: 1.8;
+  padding: clamp(18px, 3vw, 28px) clamp(20px, 3vw, 35px);
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  line-height: 1.9;
   color: #cbd5e1;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   border-left: 5px solid var(--primary-blue);
@@ -79,8 +81,7 @@
   transform: translateY(40px);
   cursor: pointer;
   width: 100%;
-  box-sizing: border-box;
-  min-height: 120px;
+  min-height: 140px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -93,18 +94,6 @@
 
 .about-text p:hover {
   box-shadow: 0 2px 2px rgba(var(--primary-blue-rgb), 0.4);
-}
-
-.inline-logo {
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
-  margin-right: 10px;
-  vertical-align: middle;
-  border-radius: 8px;
-  border: 1px solid var(--light-blue);
-  background: transparent;
-  padding: 2px;
 }
 
 .about-text p::before {
@@ -131,6 +120,18 @@
   0% { left: -100%; }
   50% { left: 100%; }
   100% { left: -100%; }
+}
+
+.inline-logo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-right: 10px;
+  vertical-align: middle;
+  border-radius: 8px;
+  border: 1px solid var(--light-blue);
+  background: transparent;
+  padding: 2px;
 }
 
 /* ========================= Skills Section ========================= */
@@ -263,7 +264,7 @@
   transition: width 1s ease-in-out;
 }
 
-/* ========================= Education Section (Updated) ========================= */
+/* ========================= Education Section ========================= */
 .education {
   padding: clamp(30px, 5vw, 60px) clamp(15px, 3vw, 80px);
   background: rgba(255, 255, 255, 0.03);
@@ -283,12 +284,6 @@
   letter-spacing: 1px;
   text-shadow: 0 0 8px rgba(var(--primary-blue-rgb), 0.4),
                0 0 15px rgba(var(--primary-blue-rgb), 0.25);
-}
-
-.about-text {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: clamp(20px, 3vw, 40px);
 }
 
 .education-item {
@@ -353,13 +348,6 @@
   color: var(--white);
 }
 
-@media (max-width: 768px) {
-  .about-text {
-    grid-template-columns: 1fr;
-  }
-}
-
-
 /* ========================= Logos Marquee ========================= */
 .logos-marquee {
   width: 100%;
@@ -394,11 +382,10 @@
   .about-text { grid-template-columns: 1fr; }
   .skills-row { grid-template-columns: repeat(2, 1fr); }
   .logos-track img { height: clamp(30px, 6vw, 50px); }
-  .education-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
-  .about-text { padding: 0 clamp(2%, 5%, 5%); gap: clamp(10px, 2vw, 15px); }
+  .about-text { padding: 0 clamp(2%, 5%, 5%); gap: clamp(12px, 2vw, 18px); }
   .skills-row { grid-template-columns: 1fr; gap: clamp(10px, 2vw, 15px); }
   .skill-category { padding: clamp(15px, 2.5vw, 18px); }
   .logos-track img { height: clamp(25px, 5vw, 40px); }
@@ -415,13 +402,13 @@
 }
 
 @media (min-width: 1440px) {
-  .about-text { padding: 0 8%; }
+  .about-text { grid-template-columns: repeat(2, minmax(500px, 1fr)); padding: 0 10%; }
   .skills-row { gap: 30px; }
   .skill-category { max-width: 450px; }
 }
 
 @media (min-width: 1920px) {
-  .about-text { padding: 0 12%; }
+  .about-text { grid-template-columns: repeat(2, minmax(600px, 1fr)); padding: 0 14%; }
   .skills-row { gap: 35px; }
   .skill-category { max-width: 500px; padding: 30px; }
 }
