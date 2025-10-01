@@ -303,7 +303,7 @@
 
   /* Show short text */
   .whatsapp-contact::after {
-    content: "Need Help?";
+    content: "Let's Talk👋";
     font-size: 0.75rem; /* smaller text */
     font-weight: 500;
     margin-left: 4px;

@@ -26,7 +26,7 @@ function App() {
         className="whatsapp-contact"
       >
         <FaWhatsapp className="whatsapp-icon" />
-        <span>Need Help? Contact Me</span>
+        <span>Let’s Talk👋</span>
       </a>
     </div>
   );
