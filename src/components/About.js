@@ -98,7 +98,7 @@ const About = () => {
           <div className="education-item">
             <h4>
               <img src={londonMetLogo} alt="London Met" className="inline-logo" />
-              Bachelor of Science in Software Engineering
+              Bachelor of Engineering in Software Engineering
             </h4>
             <ul>
               <li><strong>Institution:</strong> London Metropolitan University</li>
