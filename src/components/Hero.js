@@ -1015,17 +1015,23 @@ export default function Hero() {
               performance-driven marketing strategies.
             </p>
 
-            {/* Buttons */}
-            <div className="hero-buttons">
-              <a href="#projects" className="btn btn-primary">
-                View Projects
-                <span className="btn-hover-effect"></span>
-              </a>
-              <a href="#contact" className="btn btn-secondary">
-                Contact Me
-                <span className="btn-hover-effect"></span>
-              </a>
-            </div>
+  {/* Buttons */}
+<div className="hero-buttons">
+  <a href="#projects" className="btn btn-primary">
+    View Projects
+    <span className="btn-hover-effect"></span>
+  </a>
+
+  <a href="/files/My_CV.pdf" download className="btn btn-download">
+    <span className="btn-text">Download CV</span>
+    
+    <span className="btn-hover-effect"></span>
+  </a>
+</div>
+
+
+
+
           </div>
 
           {/* Hero Image */}
