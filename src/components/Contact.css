@@ -8,7 +8,7 @@
 
 /* ===== Contact Section ===== */
 .contact-section {
-  background: linear-gradient(to bottom, #0a0a1a, #001a40);
+  background: #000000; /* fallback color */
   color: var(--white);
   padding: 40px 20px;
   display: flex;
@@ -16,6 +16,37 @@
   gap: 20px;
   justify-content: center;
   align-items: stretch;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Galaxy background overlay */
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 20% 30%, #0d1b2a, #000000 80%);
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  background-repeat: repeat;
+  opacity: 0.5;
+  z-index: 0;
+  animation: starMove 120s linear infinite;
+  filter: blur(0.8px);
+}
+
+/* Ensure content is above galaxy stars */
+.contact-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Star movement animation */
+@keyframes starMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-150px, -150px); }
 }
 
 /* ===== Left Section ===== */
@@ -152,27 +183,15 @@
 
 /* Slide down animation */
 @keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Subtle shimmer animation */
 @keyframes shimmer {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* ===== Left Image ===== */

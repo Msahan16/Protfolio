@@ -1,32 +1,56 @@
 :root {
-  --primary-blue: #0066ff;
-  --primary-blue-rgb: 0, 102, 255;
-  --dark-blue: #0044cc;
+  --primary-blue: #00ccff;
+  --primary-blue-rgb: 0, 204, 255;
+  --dark-blue: #001833;
   --white: #ffffff;
   --light-blue: #cfe4ff;
   --text-light: #cbd5e1;
   --gray: #999999;
 }
 
-/* ========================= About Section ========================= */
-.about {
-  background: linear-gradient(135deg, #0b0b1a, #1a1a2e, #0b0b1a);
-  background-size: auto;
-  animation: gradientShift 20s ease infinite;
-  color: var(--text-light);
-  padding: clamp(30px, 5vw, 60px) clamp(15px, 3vw, 80px);
-  padding-top: 0px;
+/* ========================= Shared Galaxy Background ========================= */
+.about, .skills, .education {
+  background: radial-gradient(circle at 20% 30%, #0c1823, #000000 80%);
+  background-size: 200% 200%;
+  animation: gradientShift 25s ease infinite;
   position: relative;
   overflow: hidden;
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
+  color: var(--text-light);
+}
+
+.about::before, 
+.skills::before, 
+.education::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 200%;
+  height: 200%;
+  background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+  opacity: 0.6;
+  z-index: 0;
+  animation: starMove 120s linear infinite;
+  filter: blur(0.8px); 
 }
 
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+@keyframes starMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-150px, -150px); }
+}
+
+/* ========================= About Section ========================= */
+.about {
+  padding: clamp(30px, 5vw, 60px) clamp(15px, 3vw, 80px);
+  padding-top: 0px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .about .section-title {
@@ -54,7 +78,7 @@
   border-radius: 2px;
 }
 
-/* ========================= Updated About Text ========================= */
+/* ========================= About Text ========================= */
 .about-text {
   display: grid;
   grid-template-columns: repeat(2, minmax(450px, 1fr));
@@ -64,6 +88,8 @@
   padding: 0 clamp(5%, 8%, 12%);
   width: 100%;
   box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }
 
 .about-text p {
@@ -133,11 +159,10 @@
   background: transparent;
   padding: 2px;
 }
-
 /* ========================= Skills Section ========================= */
 .skills {
   padding: clamp(30px, 5vw, 60px) clamp(15px, 3vw, 80px);
-  color: var(--text-light);
+  background: transparent; /* removed radial-gradient background */
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -174,7 +199,7 @@
 }
 
 .skill-category {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.05); /* keep subtle inner card if needed */
   border-radius: 15px;
   padding: clamp(18px, 3vw, 25px);
   width: 100%;
@@ -186,6 +211,7 @@
   transition: all 0.4s ease;
   cursor: pointer;
   box-sizing: border-box;
+  
 }
 
 .skill-category.visible {
@@ -196,7 +222,7 @@
 .skill-category:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 10px 10px rgba(var(--primary-blue-rgb), 0.4);
-  border: 1px solid rgba(var(--primary-blue-rgb), 0.3);
+  border: 2px solid rgba(var(--primary-blue-rgb), 0.3);
   backdrop-filter: blur(6px);
 }
 
@@ -267,8 +293,6 @@
 /* ========================= Education Section ========================= */
 .education {
   padding: clamp(30px, 5vw, 60px) clamp(15px, 3vw, 80px);
-  background: rgba(255, 255, 255, 0.03);
-  color: var(--text-light);
   text-align: left;
   width: 100%;
   box-sizing: border-box;
@@ -441,7 +465,7 @@
 }
 
 @media print {
-  .about { background: white !important; color: black !important; }
+  .about, .skills, .education { background: white !important; color: black !important; }
   .about-text p, .skill-category { background: white !important; color: black !important; box-shadow: none !important; }
   .logos-marquee { display: none; }
 }

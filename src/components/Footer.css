@@ -1,32 +1,75 @@
+/* ========================= Galaxy Footer ========================= */
 .footer {
-  background: linear-gradient(135deg, #0a0a1a, #001a40); /* match contact section */
+  position: relative;
+  overflow: hidden;
   text-align: center;
   padding: 25px 10px;
-  color: #cfe4ff; /* lighter blue text to match contact section */
+  color: #378af6; /* light blue text */
   font-size: 0.95rem;
-  border-top: 1px solid rgba(0, 102, 255, 0.4); /* primary blue border */
+  border-top: 1px solid rgba(4, 9, 10, 0.4);
   backdrop-filter: blur(6px);
-  box-shadow: 0 -2px 12px rgba(0, 102, 255, 0.25); /* blue glow */
-  transition: all 0.3s ease;
-  position: relative;
+  box-shadow: 0 -2px 12px rgba(2, 17, 20, 0.25);
+  z-index: 1;
+  background: radial-gradient(circle at 20% 30%, #0d1b2a, #0b1421 80%);
+  background-size: 200% 200%;
+  animation: footerGradientShift 25s ease infinite;
 }
 
+/* Animated stars overlay */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 200%;
+  height: 200%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+  opacity: 0.6;
+  z-index: 0;
+  animation: footerStarMove 120s linear infinite;
+  filter: blur(0.8px);
+}
+
+/* Text and links */
 .footer p {
   margin: 0;
-  color: #cfe4ff; /* light blue */
-  text-shadow: 0 0 6px rgba(0, 102, 255, 0.35);
+  position: relative;
+  z-index: 1;
+  color: #cfe4ff;
+  text-shadow: 0 0 6px rgba(0, 204, 255, 0.35);
 }
 
 .footer a {
-  color: #5abfff; /* brighter blue link */
+  color: #01070b;
   text-decoration: none;
   transition: all 0.3s ease;
-  text-shadow: 0 0 6px rgba(0, 102, 255, 0.35);
+  text-shadow: 0 0 6px rgba(0, 204, 255, 0.35);
 }
 
 .footer a:hover {
   color: #ffffff;
   text-shadow: 
-    0 0 8px rgba(0, 102, 255, 0.6),
-    0 0 14px rgba(0, 102, 255, 0.4);
+    0 0 8px rgba(0, 204, 255, 0.6),
+    0 0 14px rgba(0, 204, 255, 0.4);
+}
+
+/* ========================= Footer Animations ========================= */
+@keyframes footerGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes footerStarMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-150px, -150px); }
+}
+
+/* ========================= Responsive ========================= */
+@media screen and (max-width: 768px) {
+  .footer { padding: 20px 8px; }
+  .footer a { font-size: 0.9rem; }
+}
+
+@media screen and (max-width: 480px) {
+  .footer { padding: 15px 5px; font-size: 0.85rem; }
 }
