@@ -1017,17 +1017,23 @@ export default function Hero() {
 
   {/* Buttons */}
 <div className="hero-buttons">
+  {/* View Projects Button */}
   <a href="#projects" className="btn btn-primary">
     View Projects
     <span className="btn-hover-effect"></span>
   </a>
 
-  <a href="/files/My_CV.pdf" download className="btn btn-download">
+  {/* Download CV Button */}
+  <a 
+    href="/assets/Resume-Maleen-Mohamed-Saman-Helic-&-Co.pdf" 
+    download="Maleen-Mohamed-CV.pdf" 
+    className="btn btn-download"
+  >
     <span className="btn-text">Download CV</span>
-    
     <span className="btn-hover-effect"></span>
   </a>
 </div>
+
 
 
 
