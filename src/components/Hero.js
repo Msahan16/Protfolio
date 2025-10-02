@@ -1009,35 +1009,31 @@ export default function Hero() {
             </h1>
             <h2 className="hero-subtitle">Software Engineer</h2>
             <p className="hero-description">
-              I specialize in full-stack development, React Native mobile apps, and digital marketing. 
-              I build scalable websites and cross-platform apps, integrating AI, blockchain, and automation tools. 
-              Skilled in Laravel, WordPress, PHP, and JavaScript, I help businesses grow with tailored tech solutions and 
+              I specialize in full-stack development, React Native mobile apps, and digital marketing.
+              I build scalable websites and cross-platform apps, integrating AI, blockchain, and automation tools.
+              Skilled in Laravel, WordPress, PHP, and JavaScript, I help businesses grow with tailored tech solutions and
               performance-driven marketing strategies.
             </p>
 
-  {/* Buttons */}
-<div className="hero-buttons">
-  {/* View Projects Button */}
-  <a href="#projects" className="btn btn-primary">
-    View Projects
-    <span className="btn-hover-effect"></span>
-  </a>
+            {/* Buttons */}
+            <div className="hero-buttons">
+              {/* View Projects Button */}
+              <a href="#projects" className="btn btn-primary">
+                View Projects
+                <span className="btn-hover-effect"></span>
+              </a>
 
-  {/* Download CV Button */}
-  <a 
-    href="/assets/Resume-Maleen-Mohamed-Saman-Helic-&-Co.pdf" 
-    download="Maleen-Mohamed-CV.pdf" 
-    className="btn btn-download"
-  >
-    <span className="btn-text">Download CV</span>
-    <span className="btn-hover-effect"></span>
-  </a>
-</div>
-
-
-
-
-
+              {/* Download CV Button */}
+              <a
+                href="https://drive.google.com/file/d/1t2XJOqrGxNR1h4y1tKRuEdekFobfvSXH/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-download"
+              >
+                <span className="btn-text">Download CV</span>
+                <span className="btn-hover-effect"></span>
+              </a>
+            </div>
           </div>
 
           {/* Hero Image */}
