@@ -110,11 +110,11 @@ const Contact = () => {
         <div className="connect-box">
           <h4>Contact with me</h4>
           <div className="contact-info">
-            <a href="mailto:mohamedsaman.dev@gmail.com">
-              <FaEnvelope /> mohamedsaman.dev@gmail.com
+            <a href="mailto:maleensaman@gmail.com">
+              <FaEnvelope /> maleensaman@gmail.com
             </a>
-            <a href="tel:+94761265772">
-              <FaPhone /> (+94) 761265772
+            <a href="tel:+94759037101">
+              <FaPhone /> (+94) 0759037101
             </a>
           </div>
         </div>
@@ -128,10 +128,10 @@ const Contact = () => {
             <a href="https://github.com/mohamedsaman" target="_blank" rel="noopener noreferrer">
               <FaGithub /> GitHub
             </a>
-            <a href="https://www.instagram.com/mohamed-saman/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/mohamed-saman/" target="_blank" rel="noopener noreferrer">
               <FaInstagram /> Instagram
             </a>
-            <a href="https://wa.me/+94761265772" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/+94759037101" target="_blank" rel="noopener noreferrer">
               <FaWhatsapp /> WhatsApp
             </a>
           </div>
