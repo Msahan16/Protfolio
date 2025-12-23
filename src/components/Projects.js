@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Projects.css';
 
 // Import images
-import project1Image from '../assests/Screenshot 2025-09-23 150741.png';
+import project1Image from '../assests/NEXTG.png';
 import project2Image from '../assests/Screenshot 2025-09-18 162539.png';
 import project3Image from '../assests/Screenshot 2025-09-18 160758.png';
 import project4Image from '../assests/Dynamic Ace.png';
@@ -20,6 +20,9 @@ import project16Image from '../assests/world1.jpeg';
 import project5Image from '../assests/burgershop.jpg';
 import project17Image from '../assests/Indoor.jpg';
 import project20Image from '../assests/Webxkeyy.png';
+import project21Image from '../assests/USN1.png';
+import project22Image from '../assests/metro.jpeg';
+
 
 
 // SaharaLanka slider images
@@ -49,6 +52,12 @@ import burgershop from '../assests/burgershop.jpg';
 
 import indoor from '../assests/Indoor.jpg';
 
+//usn auto parts images
+import usn2 from '../assests/usn2.jpeg';
+import usn3 from '../assests/usn3.jpeg';
+import usn4 from '../assests/usn4.jpeg';
+import usn5 from '../assests/usn5.jpeg';
+
 
 const Projects = () => {
   const [activePopup, setActivePopup] = useState(null);
@@ -65,6 +74,22 @@ const Projects = () => {
       category: 'Websites',
        liveUrl: 'https://nextgensolutionspng.com/', 
       image: project1Image },
+    { id: 19, 
+      title: 'USN Auto Parts', 
+      description: 'A comprehensive CRM system tailored for USN.', 
+      technologies: ['Laravel', 'Php', 'MySQL'], 
+      category: 'Systems',
+      images: [usn2, usn3, usn4, usn5], 
+      image: project21Image },
+
+       { id: 19, 
+      title: 'Metro Mobiles', 
+      description: 'A comprehensive e-commerce platform for mobile phones and accessories.', 
+      technologies: ['Wordpress', 'CSS'], 
+      category: 'Websites',
+      liveUrl: 'https://metromobiles.lk/', 
+      image: project22Image },
+
     { id: 2,
        title: 'Business management system for a watch company',
         description: 'Developed a fully customized business management system for a watch company.', 
